@@ -1,0 +1,1040 @@
+
+/* =========================================
+   HUELLITAS VET - ESTILOS GENERALES
+========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+    --verde-principal: #258675;
+    --verde-oscuro: #176457;
+    --verde-menta: #dff4eb;
+    --verde-claro: #f0faf5;
+    --crema: #fffaf1;
+    --naranja: #f4ac70;
+    --texto: #273b38;
+    --texto-suave: #687b76;
+    --blanco: #ffffff;
+    --sombra: 0 12px 35px rgba(29, 87, 72, 0.09);
+    --radio: 22px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 85px;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    color: var(--texto);
+    background-color: var(--blanco);
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    color: var(--texto);
+}
+
+p {
+    color: var(--texto-suave);
+    line-height: 1.8;
+}
+
+a {
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+::selection {
+    background: var(--verde-menta);
+    color: var(--verde-oscuro);
+}
+
+/* =========================================
+   BARRA DE NAVEGACIÓN
+========================================= */
+
+.navbar {
+    padding: 17px 0;
+    transition: all 0.3s ease;
+}
+
+.navbar-brand {
+    font-size: 1.55rem;
+    color: var(--verde-principal) !important;
+    letter-spacing: -0.7px;
+}
+
+.navbar-brand i {
+    color: var(--naranja);
+    margin-right: 7px;
+}
+
+.navbar .nav-link {
+    color: var(--texto) !important;
+    font-size: 0.95rem;
+    font-weight: 800;
+    margin: 0 7px;
+    position: relative;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+    color: var(--verde-principal) !important;
+}
+
+.navbar .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 8px;
+    right: 8px;
+    bottom: 4px;
+    height: 2px;
+    background: var(--verde-principal);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.navbar .nav-link:hover::after {
+    transform: scaleX(1);
+}
+
+.navbar-toggler {
+    border-color: var(--verde-menta);
+}
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 3px var(--verde-menta);
+}
+
+/* =========================================
+   BOTONES
+========================================= */
+
+.btn {
+    border-radius: 13px;
+    font-weight: 800;
+    padding: 12px 22px;
+    transition: all 0.3s ease;
+}
+
+.btn-success {
+    background-color: var(--verde-principal);
+    border-color: var(--verde-principal);
+    color: white;
+}
+
+.btn-success:hover,
+.btn-success:focus {
+    background-color: var(--verde-oscuro);
+    border-color: var(--verde-oscuro);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(37, 134, 117, 0.22);
+}
+
+.btn-outline-success {
+    color: var(--verde-principal);
+    border-color: var(--verde-principal);
+}
+
+.btn-outline-success:hover {
+    background-color: var(--verde-principal);
+    border-color: var(--verde-principal);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.btn i {
+    margin-right: 6px;
+}
+
+/* =========================================
+   HERO - PRESENTACIÓN PRINCIPAL
+========================================= */
+
+.hero-section {
+    background:
+        radial-gradient(
+            circle at 90% 20%,
+            rgba(189, 234, 216, 0.6),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            var(--crema) 0%,
+            var(--verde-claro) 100%
+        );
+
+    position: relative;
+    overflow: hidden;
+    padding-top: 80px;
+}
+
+.hero-section::before {
+    content: "🐾";
+    position: absolute;
+    top: 115px;
+    right: 7%;
+    font-size: 65px;
+    opacity: 0.12;
+    transform: rotate(-20deg);
+    pointer-events: none;
+}
+
+.hero-section::after {
+    content: "🐾";
+    position: absolute;
+    bottom: 65px;
+    left: 4%;
+    font-size: 48px;
+    opacity: 0.10;
+    transform: rotate(25deg);
+    pointer-events: none;
+}
+
+.hero-etiqueta {
+    display: inline-block;
+    padding: 10px 18px;
+    background-color: var(--verde-menta);
+    color: var(--verde-oscuro);
+    border-radius: 30px;
+    font-weight: 900;
+    font-size: 0.9rem;
+}
+
+.hero-section h1 {
+    font-size: clamp(2.5rem, 5vw, 4.3rem);
+    font-weight: 900;
+    letter-spacing: -2px;
+    line-height: 1.2;
+}
+
+.texto-verde {
+    color: var(--verde-principal);
+}
+
+.hero-section .lead {
+    font-size: 1.12rem;
+    max-width: 540px;
+}
+
+.imagen-hero {
+    width: 100%;
+    max-width: 530px;
+    height: 470px;
+    object-fit: cover;
+    border-radius: 46% 46% 30px 30px;
+    box-shadow: 18px 20px 0 var(--verde-menta);
+    animation: flotar 5s ease-in-out infinite;
+}
+
+@keyframes flotar {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+/* =========================================
+   SECCIONES GENERALES
+========================================= */
+
+.seccion {
+    padding: 100px 0;
+}
+
+.fondo-suave {
+    background-color: var(--verde-claro);
+}
+
+.subtitulo {
+    display: inline-block;
+    color: var(--verde-principal);
+    font-size: 0.9rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.seccion h2 {
+    font-size: clamp(1.9rem, 3vw, 2.7rem);
+    line-height: 1.3;
+    letter-spacing: -1px;
+}
+
+.seccion h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+
+.imagen-seccion {
+    width: 100%;
+    height: 430px;
+    object-fit: cover;
+    border-radius: var(--radio);
+    box-shadow: var(--sombra);
+}
+
+/* =========================================
+   TARJETAS DE SERVICIOS
+========================================= */
+
+.tarjeta-servicio {
+    background: var(--blanco);
+    padding: 36px 27px;
+    border-radius: var(--radio);
+    box-shadow: var(--sombra);
+    border: 1px solid rgba(37, 134, 117, 0.08);
+    height: 100%;
+    transition: all 0.35s ease;
+}
+
+.tarjeta-servicio:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 45px rgba(29, 87, 72, 0.15);
+    border-color: var(--verde-menta);
+}
+
+.icono-servicio {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 76px;
+    height: 76px;
+    border-radius: 22px;
+    background: var(--verde-menta);
+    color: var(--verde-principal);
+    font-size: 2rem;
+    margin-bottom: 25px;
+    transition: 0.3s ease;
+}
+
+.tarjeta-servicio:hover .icono-servicio {
+    background: var(--verde-principal);
+    color: white;
+    transform: rotate(-5deg);
+}
+
+.tarjeta-servicio h3 {
+    margin-bottom: 14px;
+}
+
+.tarjeta-servicio p {
+    font-size: 0.94rem;
+    margin-bottom: 0;
+}
+
+/* =========================================
+   FORMULARIOS Y REGISTRO DE MASCOTAS
+========================================= */
+
+.formulario-contenedor {
+    background: var(--blanco);
+    border: 1px solid #e7f0eb;
+    border-radius: var(--radio);
+    padding: 35px;
+    box-shadow: var(--sombra);
+}
+
+.formulario-contenedor h3 i {
+    color: var(--verde-principal);
+    margin-right: 8px;
+}
+
+.form-label {
+    color: var(--texto);
+    font-weight: 800;
+    font-size: 0.92rem;
+    margin-bottom: 9px;
+}
+
+.form-control,
+.form-select {
+    border: 1px solid #dce9e2;
+    border-radius: 12px;
+    background-color: #fcfefd;
+    padding: 13px 15px;
+    color: var(--texto);
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--verde-principal);
+    background-color: white;
+    box-shadow: 0 0 0 4px rgba(37, 134, 117, 0.12);
+}
+
+textarea.form-control {
+    resize: vertical;
+    min-height: 110px;
+}
+
+.formulario-contenedor button[type="submit"] {
+    margin-top: 8px;
+}
+
+/* Contenedor donde aparecerán las mascotas */
+
+#listaMascotas {
+    display: grid;
+    gap: 15px;
+}
+
+#listaMascotas .text-muted {
+    text-align: center;
+    padding: 35px 15px;
+    background: var(--verde-claro);
+    border-radius: 15px;
+}
+
+/* Estas clases se usarán con JavaScript */
+
+.mascota-card {
+    background: var(--verde-claro);
+    border: 1px solid var(--verde-menta);
+    border-radius: 16px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    animation: aparecer 0.4s ease;
+}
+
+.mascota-info h4 {
+    font-size: 1.05rem;
+    font-weight: 800;
+    margin-bottom: 7px;
+}
+
+.mascota-info p {
+    font-size: 0.88rem;
+    margin-bottom: 3px;
+}
+
+.mascota-icono {
+    color: var(--verde-principal);
+    font-size: 2rem;
+}
+
+.btn-eliminar {
+    background: #fff0ef;
+    border: 1px solid #f6c6c1;
+    color: #b73535;
+    border-radius: 10px;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.btn-eliminar:hover {
+    background: #b73535;
+    color: white;
+}
+
+/* =========================================
+   FORMULARIO DE CITAS
+========================================= */
+
+#citas {
+    position: relative;
+}
+
+#citas .formulario-contenedor {
+    padding: 45px;
+    border-top: 5px solid var(--verde-principal);
+}
+
+#mensajeCita {
+    font-weight: 700;
+}
+
+#mensajeCita .alert {
+    border-radius: 12px;
+    padding: 15px;
+}
+
+/* =========================================
+   TARJETAS DE CONTACTO
+========================================= */
+
+.tarjeta-contacto {
+    background: var(--blanco);
+    border: 1px solid #e7f0eb;
+    border-radius: var(--radio);
+    padding: 40px 25px;
+    height: 100%;
+    box-shadow: var(--sombra);
+    transition: 0.3s ease;
+}
+
+.tarjeta-contacto:hover {
+    transform: translateY(-7px);
+    border-color: var(--verde-menta);
+}
+
+.tarjeta-contacto > i {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 75px;
+    height: 75px;
+    background: var(--verde-menta);
+    color: var(--verde-principal);
+    font-size: 2rem;
+    border-radius: 50%;
+    margin-bottom: 22px;
+}
+
+.tarjeta-contacto h3 {
+    margin-bottom: 12px;
+}
+
+.tarjeta-contacto p {
+    margin-bottom: 0;
+    overflow-wrap: anywhere;
+}
+
+/* =========================================
+   PIE DE PÁGINA
+========================================= */
+
+.footer {
+    background-color: #153f37;
+    color: white;
+    padding: 65px 0 35px;
+}
+
+.footer h3 {
+    color: white;
+    font-weight: 800;
+    margin-bottom: 18px;
+}
+
+.footer h3 i {
+    color: var(--naranja);
+}
+
+.footer p {
+    color: #c4ddd4;
+    margin-bottom: 12px;
+}
+
+.footer p:last-child {
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    font-size: 0.85rem;
+}
+
+/* =========================================
+   ANIMACIONES
+========================================= */
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-section .col-lg-6:first-child {
+    animation: aparecer 0.8s ease both;
+}
+
+.hero-section .col-lg-6:last-child {
+    animation: aparecer 1s ease both;
+}
+
+/* =========================================
+   ADAPTACIÓN A TABLETS
+========================================= */
+
+@media (max-width: 991px) {
+
+    .navbar .nav-link {
+        padding: 12px 0;
+    }
+
+    .navbar .nav-link::after {
+        display: none;
+    }
+
+    .navbar .btn {
+        margin-top: 12px;
+    }
+
+    .hero-section {
+        padding: 130px 0 70px;
+    }
+
+    .hero-section .min-vh-100 {
+        min-height: auto !important;
+    }
+
+    .hero-section h1 {
+        font-size: 3rem;
+    }
+
+    .imagen-hero {
+        height: 390px;
+        max-width: 460px;
+    }
+
+    .seccion {
+        padding: 75px 0;
+    }
+}
+
+/* =========================================
+   ADAPTACIÓN A CELULARES
+========================================= */
+
+@media (max-width: 576px) {
+
+    .navbar-brand {
+        font-size: 1.3rem;
+    }
+
+    .hero-section {
+        padding: 125px 0 60px;
+    }
+
+    .hero-section h1 {
+        font-size: 2.45rem;
+        letter-spacing: -1px;
+    }
+
+    .hero-section .lead {
+        font-size: 1rem;
+    }
+
+    .hero-etiqueta {
+        font-size: 0.76rem;
+    }
+
+    .hero-section .d-flex .btn {
+        width: 100%;
+    }
+
+    .imagen-hero {
+        height: 300px;
+        max-width: 95%;
+        border-radius: 35% 35% 22px 22px;
+        box-shadow: 10px 12px 0 var(--verde-menta);
+    }
+
+    .seccion {
+        padding: 60px 0;
+    }
+
+    .seccion h2 {
+        font-size: 1.9rem;
+    }
+
+    .imagen-seccion {
+        height: 290px;
+    }
+
+    .tarjeta-servicio {
+        padding: 30px 25px;
+    }
+
+    .formulario-contenedor,
+    #citas .formulario-contenedor {
+        padding: 23px 18px;
+    }
+
+    .mascota-card {
+        flex-wrap: wrap;
+    }
+
+    .footer {
+        padding: 50px 0 25px;
+    }
+}
+
+/* Accesibilidad: respetar preferencias de movimiento */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* =====================================
+   FONDO DECORATIVO - HUELLITAS VET
+===================================== */
+
+body {
+    background-color: #f0faf5;
+    background-image:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(101, 207, 167, 0.20),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 85% 70%,
+            rgba(118, 211, 189, 0.18),
+            transparent 35%
+        );
+    background-attachment: fixed;
+}
+
+/* Huellitas decorativas en el fondo */
+main {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cg fill='%231a8c75' fill-opacity='.075' transform='rotate(-25 90 90)'%3E%3Cellipse cx='83' cy='104' rx='25' ry='20'/%3E%3Cellipse cx='52' cy='76' rx='9' ry='13'/%3E%3Cellipse cx='73' cy='59' rx='9' ry='13'/%3E%3Cellipse cx='98' cy='60' rx='9' ry='13'/%3E%3Cellipse cx='120' cy='78' rx='9' ry='13'/%3E%3C/g%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 180px 180px;
+}
+
+/* Secciones ligeramente transparentes */
+#nosotros,
+#mascotas,
+#contacto {
+    background-color: rgba(255, 255, 255, 0.72);
+}
+
+#servicios,
+#citas {
+    background-color: rgba(225, 246, 237, 0.78);
+}
+
+
+/* FONDO VETERINARIO - HUELLITAS VET */
+
+#inicio.hero-section {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(239, 250, 245, 0.95) 0%,
+            rgba(239, 250, 245, 0.88) 45%,
+            rgba(239, 250, 245, 0.35) 100%
+        ),
+        url("https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=1800&q=85")
+        center center / cover no-repeat !important;
+
+    min-height: 100vh;
+}
+
+/* Mejorar visibilidad del texto */
+#inicio h1,
+#inicio p {
+    text-shadow: 0 2px 12px rgba(255,255,255,0.65);
+}
+
+/* Profundidad para las tarjetas */
+.tarjeta-servicio,
+.formulario-contenedor,
+.tarjeta-contacto {
+    box-shadow: 0 12px 35px rgba(20, 95, 75, 0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarjeta-servicio:hover,
+.tarjeta-contacto:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 45px rgba(20, 95, 75, 0.20);
+}
+
+@media (max-width: 768px) {
+    #inicio.hero-section {
+        background-position: 65% center !important;
+    }
+}
+
+/* ANIMACIONES HUELLITAS VET */
+
+@keyframes aparecerSuave {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animar-entrada {
+    animation: aparecerSuave 0.8s ease-out both;
+}
+
+.tarjeta-servicio,
+.tarjeta-contacto {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarjeta-servicio:hover,
+.tarjeta-contacto:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 40px rgba(20, 95, 75, 0.18);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .animar-entrada {
+        animation: none;
+    }
+}
+
+/* ======================================
+   TARJETAS DE SERVICIOS VETERINARIOS
+====================================== */
+
+#servicios .tarjeta-servicio {
+    position: relative;
+    overflow: hidden;
+    min-height: 310px;
+    padding: 35px 25px;
+    border-radius: 24px;
+    background: #ffffff;
+    border: 1px solid rgba(28, 133, 105, 0.12);
+    box-shadow: 0 12px 30px rgba(19, 91, 72, 0.10);
+    transition: transform 0.35s ease,
+                box-shadow 0.35s ease;
+}
+
+#servicios .tarjeta-servicio::before {
+    content: "";
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    top: -65px;
+    right: -65px;
+    border-radius: 50%;
+    background: rgba(71, 190, 149, 0.12);
+    transition: transform 0.35s ease;
+}
+
+#servicios .tarjeta-servicio:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 45px rgba(19, 91, 72, 0.18);
+}
+
+#servicios .tarjeta-servicio:hover::before {
+    transform: scale(1.5);
+}
+
+#servicios .icono-servicio {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 75px;
+    height: 75px;
+    border-radius: 20px;
+    background: #e3f7ee;
+    color: #147b62;
+    font-size: 36px;
+    margin-bottom: 25px;
+}
+
+#servicios .tarjeta-servicio h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #155c4b;
+    margin-bottom: 15px;
+}
+
+#servicios .tarjeta-servicio p {
+    color: #61746e;
+    line-height: 1.7;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #servicios .tarjeta-servicio,
+    #servicios .tarjeta-servicio::before {
+        transition: none;
+    }
+}
+
+/* FOTOGRAFÍAS DE LOS SERVICIOS */
+
+#servicios .tarjeta-servicio {
+    padding: 0 0 25px;
+    height: 100%;
+}
+
+#servicios .imagen-servicio {
+    display: block;
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    border-radius: 24px 24px 0 0;
+    margin-bottom: 20px;
+    transition: transform 0.4s ease;
+}
+
+#servicios .tarjeta-servicio h3,
+#servicios .tarjeta-servicio p {
+    margin-left: 22px;
+    margin-right: 22px;
+}
+
+#servicios .tarjeta-servicio .icono-servicio {
+    margin-left: 22px;
+    width: 55px;
+    height: 55px;
+    font-size: 26px;
+    margin-bottom: 15px;
+}
+
+#servicios .tarjeta-servicio:hover .imagen-servicio {
+    filter: saturate(1.15);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #servicios .imagen-servicio {
+        transition: none;
+    }
+}
+
+/* =========================================
+   CORRECCIÓN DEFINITIVA DE SERVICIOS
+========================================= */
+
+#servicios .row.g-4 {
+    align-items: stretch;
+}
+
+#servicios .row.g-4 > div {
+    display: flex;
+}
+
+#servicios .tarjeta-servicio {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    padding: 0 0 25px !important;
+    overflow: hidden;
+    border-radius: 22px;
+    background: white;
+}
+
+#servicios .tarjeta-servicio .imagen-servicio {
+    display: block;
+    width: 100% !important;
+    height: 190px !important;
+    min-height: 190px;
+    max-height: 190px;
+    object-fit: cover !important;
+    object-position: center;
+    flex-shrink: 0;
+    margin: 0 0 18px !important;
+    border-radius: 22px 22px 0 0;
+}
+
+#servicios .tarjeta-servicio .icono-servicio {
+    margin: 0 22px 15px;
+    flex-shrink: 0;
+}
+
+#servicios .tarjeta-servicio h3 {
+    margin: 0 22px 12px;
+    font-size: 1.25rem;
+}
+
+#servicios .tarjeta-servicio p {
+    margin: 0 22px;
+    line-height: 1.6;
+}
+
+/* ==========================================
+   HUELLITAS VET - CORRECCIÓN DE IMÁGENES
+   ========================================== */
+
+/* Mantener las cuatro columnas correctamente */
+#servicios .row.g-4 {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+}
+
+/* Evitar que las tarjetas se estiren demasiado */
+#servicios .row.g-4 > .col-md-6 {
+    display: flex;
+    min-width: 0;
+}
+
+/* Diseño uniforme de cada tarjeta */
+#servicios .tarjeta-servicio {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 0 !important;
+    padding: 0 0 25px !important;
+    overflow: hidden !important;
+    border-radius: 22px !important;
+    background-color: #ffffff !important;
+}
+
+/* CORRECCIÓN PRINCIPAL DE LAS FOTOGRAFÍAS */
+#servicios .tarjeta-servicio img.imagen-servicio {
+    display: block !important;
+    width: 100% !important;
+    height: 190px !important;
+    min-height: 190px !important;
+    max-height: 190px !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    flex: 0 0 190px !important;
+    margin: 0 0 20px !important;
+    padding: 0 !important;
+    border-radius: 22px 22px 0 0 !important;
+}
+
+/* Iconos */
+#servicios .tarjeta-servicio .icono-servicio {
+    margin: 0 22px 15px !important;
+    width: 55px !important;
+    height: 55px !important;
+    flex-shrink: 0;
+}
+
+/* Títulos */
+#servicios .tarjeta-servicio h3 {
+    margin: 0 22px 12px !important;
+    font-size: 1.2rem !important;
+}
+
+/* Descripciones */
+#servicios .tarjeta-servicio p {
+    margin: 0 22px !important;
+    line-height: 1.6;
+}
+
+/* Ajuste para celulares */
+@media (max-width: 576px) {
+    #servicios .tarjeta-servicio img.imagen-servicio {
+        height: 210px !important;
+        min-height: 210px !important;
+        max-height: 210px !important;
+        flex-basis: 210px !important;
+    }
+}
